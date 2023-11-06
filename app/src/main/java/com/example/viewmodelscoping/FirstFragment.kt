@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.viewmodelscoping.ui.theme.ViewModelScopingTheme
+import com.example.viewmodelscoping.util.isTablet
 
 class FirstFragment: Fragment() {
 
@@ -44,7 +45,15 @@ class FirstFragment: Fragment() {
                         ) {
                             Text("This is the First Fragment !")
 
-                            Button(onClick = { navigateToSecondFragment() }) {
+                            Button(
+                                onClick = {
+                                    if(isAdded && isTablet(requireActivity())) {
+                                        navigateToSideBySideFragment()
+                                    } else {
+                                        navigateToSecondFragment()
+                                    }
+                                }
+                            ) {
                                 Text("Next")
                             }
                         }
@@ -56,6 +65,11 @@ class FirstFragment: Fragment() {
 
     private fun navigateToSecondFragment() {
         val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
+        view?.findNavController()?.navigate(action)
+    }
+
+    private fun navigateToSideBySideFragment() {
+        val action = FirstFragmentDirections.actionFirstFragmentToSideBySideContainerFragment(leftNumber = 3, rightNumber = 4)
         view?.findNavController()?.navigate(action)
     }
 }

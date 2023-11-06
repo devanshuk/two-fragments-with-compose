@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/left_pane_graph"
+    app:startDestination="@id/leftPaneFragment">
+
+    <fragment
+        android:id="@+id/leftPaneFragment"
+        android:name="com.example.viewmodelscoping.sidebyside.LeftPaneFragment"
+        android:label="LeftPaneFragment" />
+    <argument
+        android:name="leftNumber"
+        app:argType="integer"
+        android:defaultValue="-1" />
+</navigation>

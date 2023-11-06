@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/side_by_side_right_graph"
+    app:startDestination="@id/rightPaneFragment">
+
+    <fragment
+        android:id="@+id/rightPaneFragment"
+        android:name="com.example.viewmodelscoping.sidebyside.RightPaneFragment"
+        android:label="RightPaneFragment" >
+        <argument
+            android:name="rightNumber"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>

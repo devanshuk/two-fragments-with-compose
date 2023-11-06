@@ -11,9 +11,25 @@
         <action
             android:id="@+id/action_firstFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_sideBySideContainerFragment"
+            app:destination="@id/sideBySideContainerFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.viewmodelscoping.SecondFragment"
         android:label="SecondFragment" />
+    <fragment
+        android:id="@+id/sideBySideContainerFragment"
+        android:name="com.example.viewmodelscoping.sidebyside.SideBySideContainerFragment"
+        android:label="SideBySideContainerFragment" >
+        <argument
+            android:name="leftNumber"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="rightNumber"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
 </navigation>
